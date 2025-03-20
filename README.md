@@ -1,19 +1,57 @@
 ## Описание проекта
 Веб-приложение генератор случайных чисел на FastAPI.
 
-## Запуск
-1. Соберите образ:
-docker build -t fastapi-app .
+## Шаги по сборке и запуску контейнера
 
-2. Запустите контейнер:
-docker run -p 8000:8000 fastapi-app
+### 1. Подготовка
+1. **Создайте директорию для проекта (опционально):**
+   ```bash
+   mkdir <directory_name>
+   cd <directory_name>
+   ```
 
-3. Откройте в браузере:
-http://localhost:8000
+2. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com/Crayz129/docker-dz.git .
+   ```
 
-## Запуск через Docker Compose (опционально)
-docker-compose up --build
+3. **Проверьте наличие Docker:**
+   ```bash
+   docker --version
+   ```
+   Если Docker не установлен, следуйте [официальной инструкции](https://docs.docker.com/get-docker/).
 
-## Возможные ошибки
-- **Address already in use** – убедитесь, что порт 8000 свободен.
-- **ModuleNotFoundError** – убедитесь, что зависимости установлены.
+### Сборка и запуск контейнера
+
+1. **Соберите Docker образ:**
+   ```bash
+   docker build -t fastapi-app .
+   ```
+
+2. **Запустите контейнер:**
+   ```bash
+   docker run -p 8000:8000 fastapi-app
+   ```
+
+3. **Проверьте работу приложения:**
+   Откройте браузер и перейдите по адресу:
+   ```
+   http://localhost:8000
+   ```
+
+### Возможные ошибки и решения
+
+- **Address already in use:** Убедитесь, что порт 8000 свободен.
+- **ModuleNotFoundError:** Проверьте, что зависимости установлены в контейнере.
+
+### Остановка контейнера
+
+```bash
+docker stop <container_id>
+```
+
+Для просмотра списка запущенных контейнеров:
+```bash
+docker ps
+```
+
